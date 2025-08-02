@@ -1,6 +1,6 @@
-# UDS Package #TEMPLATE_APPLICATION_DISPLAY_NAME#
+# UDS Package SocketZero
 
-Details about the #TEMPLATE_APPLICATION_DISPLAY_NAME# package and requirements of [badging](https://github.com/defenseunicorns/uds-common/blob/main/docs/uds-packages/requirements/uds-package-requirements.md) that may not yet be met.
+Details about the SocketZero package and requirements of [badging](https://github.com/defenseunicorns/uds-common/blob/main/docs/uds-packages/requirements/uds-package-requirements.md) that may not yet be met.
 
 <!-- Recommendation is to provide sufficient details for a package maintainer to quickly understand why an integration is or is not implemented, when the implementation is outside the bounds of a normal scenario.-->
 

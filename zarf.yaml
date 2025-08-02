@@ -4,11 +4,11 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/defenseunicorns/zarf/main/zarf.schema.json
 kind: ZarfPackageConfig
 metadata:
-  name: #TEMPLATE_APPLICATION_NAME#
-  description: "UDS #TEMPLATE_APPLICATION_DISPLAY_NAME# package"
+  name: socketzero
+  description: "UDS SocketZero package"
   version: "dev"
   annotations:
-    dev.uds.title: #TEMPLATE_APPLICATION_DISPLAY_NAME#
+    dev.uds.title: SocketZero
     dev.uds.tagline: ""
     dev.uds.categories: ""
     dev.uds.keywords: ""
@@ -25,43 +25,19 @@ variables:
     default: "example_db_endpoint"
 
 components:
-  - name: #TEMPLATE_APPLICATION_NAME#
+  - name: socketzero
     required: true
-    description: "Deploy #TEMPLATE_APPLICATION_DISPLAY_NAME#"
+    description: "Deploy SocketZero"
     import:
       path: common
-    only:
-      flavor: upstream
+    # only:
+    #   flavor: registry1
+    #   cluster:
+    #     architecture: amd64
     charts:
-      - name: #TEMPLATE_APPLICATION_NAME#
-        valuesFiles:
-          - values/upstream-values.yaml
-    images: []
-
-  - name: #TEMPLATE_APPLICATION_NAME#
-    required: true
-    description: "Deploy #TEMPLATE_APPLICATION_DISPLAY_NAME#"
-    import:
-      path: common
-    only:
-      flavor: registry1
-      cluster:
-        architecture: amd64
-    charts:
-      - name: #TEMPLATE_APPLICATION_NAME#
+      - name: socketzero
         valuesFiles:
           - values/registry1-values.yaml
-    images: []
-
-  - name: #TEMPLATE_APPLICATION_NAME#
-    required: true
-    description: "Deploy #TEMPLATE_APPLICATION_DISPLAY_NAME#"
-    import:
-      path: common
-    only:
-      flavor: unicorn
-    charts:
-      - name: #TEMPLATE_APPLICATION_NAME#
-        valuesFiles:
-          - values/unicorn-values.yaml
-    images: []
+    images:
+      - registry1.dso.mil/ironbank/radiusmethod/socketzero/receiver:0.5.9
+      - registry1.dso.mil/ironbank/bitnami/redis:8.0.3
