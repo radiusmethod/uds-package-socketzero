@@ -13,10 +13,10 @@ After creating a repo from the UDS Package Template, follow [Making it your own]
 
 | value                                 | replace_with                | example                                                |
 | ------------------------------------- | --------------------------- | ------------------------------------------------------ |
-| `#TEMPLATE_APPLICATION_NAME#`         | application name            | nginx, mattermost, cert-manager, etc...                |
-| `#TEMPLATE_APPLICATION_DISPLAY_NAME#` | application name for humans | NGINX, Mattermost Cert Manager, etc...                 |
+| `socketzero`         | application name            | nginx, mattermost, cert-manager, etc...                |
+| `SocketZero` | application name for humans | NGINX, Mattermost Cert Manager, etc...                 |
 | `#TEMPLATE_CHART_REPO#`               | chart repository URL        | `https://charts.jetstack.io/`                          |
-| `#UDS_PACKAGE_REPO#`                  | package repository URL      | `https://github.com/defenseunicorns/uds-package-nginx` |
+| `https://github.com/radiusmethod/uds-package-socketzero`                  | package repository URL      | `https://github.com/defenseunicorns/uds-package-nginx` |
 
 2. Review, determine your need, and update
 

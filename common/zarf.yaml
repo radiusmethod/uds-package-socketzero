@@ -4,32 +4,32 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/defenseunicorns/zarf/main/zarf.schema.json
 kind: ZarfPackageConfig
 metadata:
-  name: #TEMPLATE_APPLICATION_NAME#-common
-  description: "UDS #TEMPLATE_APPLICATION_DISPLAY_NAME# Common Package"
+  name: socketzero-common
+  description: "UDS SocketZero Common Package"
 
 components:
-  - name: #TEMPLATE_APPLICATION_NAME#
+  - name: socketzero
     required: true
     charts:
-      - name: uds-#TEMPLATE_APPLICATION_NAME#-config
-        namespace: #TEMPLATE_APPLICATION_NAME#
+      - name: uds-socketzero-config
+        namespace: socketzero
         version: 0.1.0
         localPath: ../chart
-      - name: #TEMPLATE_APPLICATION_NAME#
-        namespace: #TEMPLATE_APPLICATION_NAME#
-        url: #TEMPLATE_CHART_REPO#
-        gitPath: chart
-        version: 1.2.3
+      - name: socketzero
+        namespace: socketzero
+        url: https://github.com/radiusmethod/socketzero-helm.git
+        gitPath: .
+        version: 0.5.9
         valuesFiles:
           - ../values/common-values.yaml
     actions:
       onDeploy:
         after:
-          - description: Validate #TEMPLATE_APPLICATION_DISPLAY_NAME# Package
+          - description: Validate SocketZero Package
             maxTotalSeconds: 300
             wait:
               cluster:
                 kind: packages.uds.dev
-                name: #TEMPLATE_APPLICATION_NAME#
-                namespace: #TEMPLATE_APPLICATION_NAME#
+                name: socketzero
+                namespace: socketzero
                 condition: "'{.status.phase}'=Ready"

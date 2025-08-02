@@ -1,12 +1,12 @@
-# UDS Package #TEMPLATE_APPLICATION_DISPLAY_NAME#
+# UDS Package SocketZero
 
-This package is designed to be deployed on [UDS Core](https://github.com/defenseunicorns/uds-core) and is based on the upstream [#TEMPLATE_APPLICATION_DISPLAY_NAME#](#TEMPLATE_CHART_REPO#) chart.
+This package is designed to be deployed on [UDS Core](https://github.com/defenseunicorns/uds-core) and is based on the upstream [SocketZero](#TEMPLATE_CHART_REPO#) chart.
 
 > INSERT HERE 1-2 sentence summary of what the application does.
 
 ## Pre-requisites
 
-The #TEMPLATE_APPLICATION_DISPLAY_NAME# Package expects to be deployed on top of [UDS Core](https://github.com/defenseunicorns/uds-core) with the dependencies listed below being configured prior to deployment.
+The SocketZero Package expects to be deployed on top of [UDS Core](https://github.com/defenseunicorns/uds-core) with the dependencies listed below being configured prior to deployment.
 
 #### Dependency information
 
@@ -22,7 +22,7 @@ Add any dependency information here
 
 ## Releases
 
-The released packages can be found in [ghcr](https://github.com/uds-packages/#TEMPLATE_APPLICATION_NAME#/pkgs/container/#TEMPLATE_APPLICATION_NAME#).
+The released packages can be found in [ghcr](https://github.com/uds-packages/socketzero/pkgs/container/socketzero).
 
 ## UDS Tasks (for local dev and CI)
 

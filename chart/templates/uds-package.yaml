@@ -4,15 +4,15 @@
 apiVersion: uds.dev/v1alpha1
 kind: Package
 metadata:
-  name: #TEMPLATE_APPLICATION_NAME#
+  name: socketzero
   namespace: {{ .Release.Namespace }}
 spec:
   {{- if .Values.sso.enabled }}
   sso:
-    - name: #TEMPLATE_APPLICATION_DISPLAY_NAME# Login
-      clientId: uds-package-#TEMPLATE_APPLICATION_NAME#
+    - name: SocketZero Login
+      clientId: uds-package-socketzero
       redirectUris:
-        - "https://#TEMPLATE_APPLICATION_NAME#.{{ .Values.domain }}/oauth2/callback/saml"
+        - "https://socketzero.{{ .Values.domain }}/oauth2/callback/saml"
       protocol: saml
       defaultClientScopes:
         - "mapper-saml-email-email"
@@ -25,7 +25,7 @@ spec:
       secretName: {{ .Values.sso.secretName }}
       # This secret template configures sso for the application. Will need updated based on application required configuration
       secretTemplate:
-        #TEMPLATE_APPLICATION_NAME#.sso.config.key: |
+        socketzero.sso.config.key: |
             example.auth.saml.enabled: {{ .Values.sso.enabled }}
             example.auth.saml.applicationId: clientField(clientId)
             example.auth.saml.providerName: {{ .Values.sso.saml.providerName }}
@@ -39,12 +39,12 @@ spec:
   # Customize network policies and expose services via istio
   network:
     expose:
-      - service: #TEMPLATE_APPLICATION_NAME#
+      - service: socketzero
         podLabels:
-          app: #TEMPLATE_APPLICATION_NAME#
+          app: socketzero
         gateway: tenant
-        host: #TEMPLATE_APPLICATION_NAME#
-        port: 1234
+        host: socketzero
+        port: 9997
     allow:
       - direction: Ingress
         remoteGenerated: IntraNamespace

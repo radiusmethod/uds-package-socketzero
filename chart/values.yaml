@@ -6,10 +6,10 @@ domain: "###ZARF_VAR_DOMAIN###"
 sso:
   enabled: false
   protocol: saml
-  secretName: #TEMPLATE_APPLICATION_NAME#-sso
-  adminGroups: ["/#TEMPLATE_APPLICATION_DISPLAY_NAME# Admin", "/UDS Core/Admin"]
+  secretName: socketzero-sso
+  adminGroups: ["/SocketZero Admin", "/UDS Core/Admin"]
   saml:
-    providerName: "#TEMPLATE_APPLICATION_DISPLAY_NAME#"
+    providerName: "SocketZero"
 # Support for custom `network.allow` entries on the Package CR
 additionalNetworkAllow: []
 #    # Notice no `remoteGenerated` field here on custom internal rule
@@ -26,4 +26,4 @@ additionalNetworkAllow: []
 #     selector:
 #       app: webservice
 #     remoteGenerated: Anywhere
-#     description: "Egress from #TEMPLATE_APPLICATION_NAME#"
+#     description: "Egress from socketzero"
