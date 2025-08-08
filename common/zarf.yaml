@@ -7,6 +7,14 @@ metadata:
   name: socketzero-common
   description: "UDS SocketZero Common Package"
 
+variables:
+  - name: SOCKETZERO_CONFIG
+    description: "JSON configuration for SocketZero"
+  - name: SOCKETZERO_LICENSE_ORG
+    description: "Organization name for the license"
+  - name: SOCKETZERO_LICENSE_KEY
+    description: "License key for SocketZero"
+
 components:
   - name: socketzero
     required: true
@@ -19,7 +27,7 @@ components:
         namespace: socketzero
         url: https://github.com/radiusmethod/socketzero-helm.git
         gitPath: .
-        version: 0.5.9
+        version: 0.5.9-r1
         valuesFiles:
           - ../values/common-values.yaml
     actions:

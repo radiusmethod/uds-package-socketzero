@@ -15,14 +15,14 @@ metadata:
     dev.uds.icon: ""
 
 variables:
-  - name: EXAMPLE_VARIABLES
-    default: "examples"
   - name: DOMAIN
     default: "uds.dev"
-  - name: EXAMPLE_DB_USERNAME
-    default: "example_username"
-  - name: EXAMPLE_DB_ENDPOINT
-    default: "example_db_endpoint"
+  - name: SOCKETZERO_CONFIG
+    description: "JSON configuration for SocketZero"
+  - name: SOCKETZERO_LICENSE_ORG
+    description: "Organization name for the license"
+  - name: SOCKETZERO_LICENSE_KEY
+    description: "License key for SocketZero"
 
 components:
   - name: socketzero
@@ -30,14 +30,8 @@ components:
     description: "Deploy SocketZero"
     import:
       path: common
-    # only:
-    #   flavor: registry1
-    #   cluster:
-    #     architecture: amd64
     charts:
       - name: socketzero
-        valuesFiles:
-          - values/registry1-values.yaml
     images:
       - registry1.dso.mil/ironbank/radiusmethod/socketzero/receiver:0.5.9
       - registry1.dso.mil/ironbank/bitnami/redis:8.0.3
