@@ -8,6 +8,8 @@ metadata:
   description: "UDS SocketZero Common Package"
 
 variables:
+  - name: DOMAIN
+    description: "Domain for SocketZero"
   - name: SOCKETZERO_CONFIG
     description: "JSON configuration for SocketZero"
   - name: SOCKETZERO_LICENSE_ORG

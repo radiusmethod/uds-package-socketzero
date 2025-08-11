@@ -4,11 +4,7 @@
 # Example values from UDS package repo template
 domain: "###ZARF_VAR_DOMAIN###"
 sso:
-  enabled: false
-  protocol: saml
+  enabled: true
   secretName: socketzero-sso
-  adminGroups: ["/SocketZero Admin", "/UDS Core/Admin"]
-  saml:
-    providerName: "SocketZero"
 # Support for custom `network.allow` entries on the Package CR
 additionalNetworkAllow: []
