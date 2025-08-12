@@ -13,9 +13,8 @@ spec:
       clientId: uds-package-socketzero
       redirectUris:
         - "https://socketzero.{{ .Values.domain }}/login"
-      secretName: {{ .Values.sso.secretName }}
       enableAuthserviceSelector:
-        app: socketzero
+        app.kubernetes.io/name: socketzero
   {{- end }}
   # Customize network policies and expose services via istio
   network:

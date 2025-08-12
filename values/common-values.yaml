@@ -3,9 +3,12 @@
 
 # Values common to all flavors
 
-debug: true
+debug: false
 maxRequestHeaderSize: "8192" # this can be adjusted to deal with larger header sizes such as with passing certs with Keycloak
 license:
   organization: "###ZARF_VAR_SOCKETZERO_LICENSE_ORG###"
   key: "###ZARF_VAR_SOCKETZERO_LICENSE_KEY###"
 config: "###ZARF_VAR_SOCKETZERO_CONFIG###"
+redis:
+  auth:
+    password: "helloworld"
