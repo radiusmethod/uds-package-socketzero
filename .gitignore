@@ -31,3 +31,5 @@ node_modules/
 
 # VSCode
 .vscode/
+
+config.json

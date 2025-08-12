@@ -8,7 +8,7 @@ import { test, expect } from "@playwright/test";
 // Customize tests for application being tested. Example given for reference
 
 function randomProjectName() {
-  return `uds-package-#TEMPLATE_APPLICATION_NAME#-${Math.floor((Math.random() * 1000))}`;
+  return `uds-package-socketzero-${Math.floor((Math.random() * 1000))}`;
 }
 
 test('create a project', async ({ page }) => {

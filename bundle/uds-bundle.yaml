@@ -3,16 +3,25 @@
 
 kind: UDSBundle
 metadata:
-  name: #TEMPLATE_APPLICATION_NAME#-test
-  description: A UDS bundle for deploying #TEMPLATE_APPLICATION_DISPLAY_NAME# and its dependencies on a development cluster
-  version: dev
+  name: socketzero
+  description: A UDS bundle for deploying SocketZero and its dependencies on a development cluster
+  version: 0.0.1
 
 packages:
-  # #TEMPLATE_APPLICATION_NAME# has a dependency on some-application
-  # - name: some-application
-  #   repository: ghcr.io/defenseunicorns/packages/uds/some-application
-  #   ref: 0.1.3-upstream
-
-  - name: #TEMPLATE_APPLICATION_NAME#
+  - name: socketzero
     path: ../
     ref: dev
+
+    overrides:
+      socketzero:
+        socketzero:
+          variables:
+            - name: SOCKETZERO_CONFIG
+              path: "config_base64"
+              description: "Set the config for socketzero"
+            - name: SOCKETZERO_LICENSE_ORG
+              path: "license.organization"
+              description: "Set the organization for the license"
+            - name: SOCKETZERO_LICENSE_KEY
+              path: "license.key"
+              description: "Set the key for the license"

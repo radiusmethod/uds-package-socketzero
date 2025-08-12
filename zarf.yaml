@@ -4,64 +4,34 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/defenseunicorns/zarf/main/zarf.schema.json
 kind: ZarfPackageConfig
 metadata:
-  name: #TEMPLATE_APPLICATION_NAME#
-  description: "UDS #TEMPLATE_APPLICATION_DISPLAY_NAME# package"
+  name: socketzero
+  description: "UDS SocketZero package"
   version: "dev"
   annotations:
-    dev.uds.title: #TEMPLATE_APPLICATION_DISPLAY_NAME#
-    dev.uds.tagline: ""
-    dev.uds.categories: ""
-    dev.uds.keywords: ""
-    dev.uds.icon: ""
+    dev.uds.title: SocketZero
+    dev.uds.tagline: Military-grade Post Quantum Zero Trust access for your most critical applications
+    dev.uds.categories: Networking, Cybersecurity
+    dev.uds.keywords: Socketzero, Radius Method, Zero Trust, Networking, Beyondcorp, Post Quantum, TCP, UDP
+    dev.uds.icon: data:image/svg+xml;base64,iVBORw0KGgoAAAANSUhEUgAAAHwAAAB8CAYAAACrHtS+AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDYuMC1jMDAyIDc5LjE2NDM1MiwgMjAyMC8wMS8zMC0xNTo1MDozOCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRw
 
 variables:
-  - name: EXAMPLE_VARIABLES
-    default: "examples"
   - name: DOMAIN
     default: "uds.dev"
-  - name: EXAMPLE_DB_USERNAME
-    default: "example_username"
-  - name: EXAMPLE_DB_ENDPOINT
-    default: "example_db_endpoint"
+  - name: SOCKETZERO_CONFIG
+    description: "JSON configuration for SocketZero"
+  - name: SOCKETZERO_LICENSE_ORG
+    description: "Organization name for the license"
+  - name: SOCKETZERO_LICENSE_KEY
+    description: "License key for SocketZero"
 
 components:
-  - name: #TEMPLATE_APPLICATION_NAME#
+  - name: socketzero
     required: true
-    description: "Deploy #TEMPLATE_APPLICATION_DISPLAY_NAME#"
+    description: "Deploy SocketZero"
     import:
       path: common
-    only:
-      flavor: upstream
     charts:
-      - name: #TEMPLATE_APPLICATION_NAME#
-        valuesFiles:
-          - values/upstream-values.yaml
-    images: []
-
-  - name: #TEMPLATE_APPLICATION_NAME#
-    required: true
-    description: "Deploy #TEMPLATE_APPLICATION_DISPLAY_NAME#"
-    import:
-      path: common
-    only:
-      flavor: registry1
-      cluster:
-        architecture: amd64
-    charts:
-      - name: #TEMPLATE_APPLICATION_NAME#
-        valuesFiles:
-          - values/registry1-values.yaml
-    images: []
-
-  - name: #TEMPLATE_APPLICATION_NAME#
-    required: true
-    description: "Deploy #TEMPLATE_APPLICATION_DISPLAY_NAME#"
-    import:
-      path: common
-    only:
-      flavor: unicorn
-    charts:
-      - name: #TEMPLATE_APPLICATION_NAME#
-        valuesFiles:
-          - values/unicorn-values.yaml
-    images: []
+      - name: socketzero
+    images:
+      - registry1.dso.mil/ironbank/radiusmethod/socketzero/receiver:0.5.9
+      - registry1.dso.mil/ironbank/bitnami/redis:8.0.3
