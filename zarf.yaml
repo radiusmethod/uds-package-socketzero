@@ -9,10 +9,10 @@ metadata:
   version: "dev"
   annotations:
     dev.uds.title: SocketZero
-    dev.uds.tagline: ""
-    dev.uds.categories: ""
-    dev.uds.keywords: ""
-    dev.uds.icon: ""
+    dev.uds.tagline: Military-grade Post Quantum Zero Trust access for your most critical applications
+    dev.uds.categories: Networking, Cybersecurity
+    dev.uds.keywords: Socketzero, Radius Method, Zero Trust, Networking, Beyondcorp, Post Quantum, TCP, UDP
+    dev.uds.icon: data:image/svg+xml;base64,iVBORw0KGgoAAAANSUhEUgAAAHwAAAB8CAYAAACrHtS+AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDYuMC1jMDAyIDc5LjE2NDM1MiwgMjAyMC8wMS8zMC0xNTo1MDozOCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRw
 
 variables:
   - name: DOMAIN
