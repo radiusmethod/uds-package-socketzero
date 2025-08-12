@@ -1,7 +1,7 @@
 # TODO
 
 ## Development Tasks
-- [ ] need to add integration for authservice
+- [x] need to add integration for authservice
 - [ ] redis password
 - [ ] convert socketzero license to a secret
 - [ ] restart the socketzero pod when config + license info change

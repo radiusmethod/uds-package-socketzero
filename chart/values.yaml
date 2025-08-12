@@ -5,6 +5,5 @@
 domain: "###ZARF_VAR_DOMAIN###"
 sso:
   enabled: true
-  secretName: socketzero-sso
 # Support for custom `network.allow` entries on the Package CR
 additionalNetworkAllow: []
