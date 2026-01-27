@@ -18,10 +18,12 @@ spec:
   {{- end }}
   # Customize network policies and expose services via istio
   network:
+    serviceMesh:
+      mode: ambient
     expose:
       - service: socketzero
-        podLabels:
-          app: socketzero
+        selector:
+          app.kubernetes.io/name: socketzero
         gateway: tenant
         host: socketzero
         port: 9997
