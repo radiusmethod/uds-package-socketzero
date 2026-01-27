@@ -33,5 +33,5 @@ components:
     charts:
       - name: socketzero
     images:
-      - registry1.dso.mil/ironbank/radiusmethod/socketzero/receiver:0.5.9
+      - registry1.dso.mil/ironbank/radiusmethod/socketzero/receiver:0.6.2
       - registry1.dso.mil/ironbank/bitnami/redis:8.0.3
