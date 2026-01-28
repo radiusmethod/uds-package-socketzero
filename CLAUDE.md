@@ -35,7 +35,7 @@ npx playwright test --project=chromium
 
 ### Package Management
 
-The repository uses common UDS tasks imported from `uds-common` v1.16.4:
+The repository uses common UDS tasks imported from `uds-common` v1.23.0:
 - `create:package`, `create:test-bundle` - Package creation
 - `deploy:test-bundle` - Bundle deployment
 - `setup:k3d-test-cluster` - Test cluster setup
@@ -87,3 +87,45 @@ Key Zarf variables defined in root `zarf.yaml`:
 - `SOCKETZERO_CONFIG` - Base64-encoded JSON configuration
 - `SOCKETZERO_LICENSE_ORG` - Organization name for license
 - `SOCKETZERO_LICENSE_KEY` - License key
+
+## Commit Linting
+
+This repository uses [Conventional Commits](https://www.conventionalcommits.org/) format. The CI workflow (`.github/workflows/commitlint.yaml`) validates **PR titles** against this format.
+
+### Format
+
+```
+<type>(<optional scope>): <description>
+```
+
+### Valid Types
+
+- `feat` - New feature
+- `fix` - Bug fix
+- `docs` - Documentation only
+- `style` - Formatting, missing semicolons, etc.
+- `refactor` - Code change that neither fixes a bug nor adds a feature
+- `perf` - Performance improvement
+- `test` - Adding or updating tests
+- `build` - Changes to build system or dependencies
+- `ci` - CI configuration changes
+- `chore` - Other changes that don't modify src or test files
+- `revert` - Reverts a previous commit
+
+### Examples
+
+```
+feat: add redis support
+fix(sso): correct keycloak redirect URL
+chore: sync with uds package template
+docs: update deployment instructions
+```
+
+### Local Validation
+
+Run commitlint locally:
+```bash
+echo "your commit message" | npx commitlint
+```
+
+The configuration is in `commitlint.config.js`.
