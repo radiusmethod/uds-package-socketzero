@@ -25,3 +25,7 @@ packages:
             - name: SOCKETZERO_LICENSE_KEY
               path: "license.key"
               description: "Set the key for the license"
+            - name: REDIS_PASSWORD
+              path: "global.redis.password"
+              description: "Redis password (required for upgrades)"
+              default: "helloworld"

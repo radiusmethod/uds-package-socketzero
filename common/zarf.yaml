@@ -16,6 +16,8 @@ variables:
     description: "Organization name for the license"
   - name: SOCKETZERO_LICENSE_KEY
     description: "License key for SocketZero"
+  - name: REDIS_PASSWORD
+    description: "Redis password (required for upgrades)"
 
 components:
   - name: socketzero
@@ -29,7 +31,7 @@ components:
         namespace: socketzero
         url: https://github.com/radiusmethod/socketzero-helm.git
         gitPath: .
-        version: 0.6.2
+        version: 0.7.0
         valuesFiles:
           - ../values/common-values.yaml
     actions:

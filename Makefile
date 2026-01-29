@@ -6,6 +6,9 @@ package:
 bundle:
 	uds create bundle --confirm
 
+.PHONY: build
+build: package bundle
+
 .PHONY: deploy
 deploy:
 	uds deploy bundle/uds-bundle-socketzero-arm64-dev.tar.zst --confirm --set config="$(cat config.json)"
