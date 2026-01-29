@@ -8,6 +8,18 @@
     "workarounds:all"
   ],
   "schedule": ["after 7am and before 9am every weekday"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["common/zarf\\.yaml$", "zarf\\.yaml$", "values/.*\\.yaml$", "CLAUDE\\.md$"],
+      "matchStrings": [
+        "radiusmethod/socketzero.*?:(?<currentValue>\\d+\\.\\d+\\.\\d+)",
+        "socketzero-helm\\.git[\\s\\S]*?version:\\s*(?<currentValue>\\d+\\.\\d+\\.\\d+)"
+      ],
+      "depNameTemplate": "radiusmethod/socketzero-helm",
+      "datasourceTemplate": "github-releases"
+    }
+  ],
   "packageRules": [
     {
       "groupName": "SocketZero Support Dependencies",
