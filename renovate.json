@@ -12,14 +12,14 @@
     {
       "customType": "regex",
       "fileMatch": ["common/zarf\\.yaml$"],
-      "matchString": "socketzero-helm\\.git\\n\\s+gitPath:[^\\n]*\\n\\s+version:\\s*(?<currentValue>\\d+\\.\\d+\\.\\d+)",
+      "matchStrings": ["socketzero-helm\\.git\\n\\s+gitPath:[^\\n]*\\n\\s+version:\\s*(?<currentValue>\\d+\\.\\d+\\.\\d+)"],
       "depNameTemplate": "radiusmethod/socketzero-helm",
       "datasourceTemplate": "github-releases"
     },
     {
       "customType": "regex",
       "fileMatch": ["zarf\\.yaml$", "values/.*\\.yaml$"],
-      "matchString": "radiusmethod/socketzero/receiver:(?<currentValue>\\d+\\.\\d+\\.\\d+)",
+      "matchStrings": ["radiusmethod/socketzero/receiver:(?<currentValue>\\d+\\.\\d+\\.\\d+)"],
       "depNameTemplate": "radiusmethod/socketzero-helm",
       "datasourceTemplate": "github-releases"
     }
@@ -29,14 +29,14 @@
       "groupName": "SocketZero Support Dependencies",
       "labels": ["support-deps"],
       "commitMessageTopic": "support-deps",
-      "matchPackagePatterns": ["*"]
+      "matchPackageNames": ["*"]
     },
     {
       "groupName": "SocketZero Package Dependencies",
       "labels": ["package-deps"],
       "commitMessageTopic": "package-deps",
       "matchDatasources": ["docker", "helm", "git-tags"],
-      "excludePackageNames": ["mcr.microsoft.com/playwright"]
+      "matchPackageNames": ["!mcr.microsoft.com/playwright"]
     }
   ]
 }
