@@ -11,4 +11,7 @@ license:
 config: "###ZARF_VAR_SOCKETZERO_CONFIG###"
 redis:
   auth:
-    password: "helloworld"
+    password: "###ZARF_VAR_REDIS_PASSWORD###"
+global:
+  redis:
+    password: "###ZARF_VAR_REDIS_PASSWORD###"

@@ -23,6 +23,9 @@ variables:
     description: "Organization name for the license"
   - name: SOCKETZERO_LICENSE_KEY
     description: "License key for SocketZero"
+  - name: REDIS_PASSWORD
+    description: "Redis password (required for upgrades)"
+    default: "helloworld"
 
 components:
   - name: socketzero
@@ -33,5 +36,5 @@ components:
     charts:
       - name: socketzero
     images:
-      - registry1.dso.mil/ironbank/radiusmethod/socketzero/receiver:0.6.2
-      - registry1.dso.mil/ironbank/bitnami/redis:8.0.3
+      - registry1.dso.mil/ironbank/radiusmethod/socketzero/receiver:0.7.0
+      - registry1.dso.mil/ironbank/bitnami/redis:8.2.0

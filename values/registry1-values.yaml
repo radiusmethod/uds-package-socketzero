@@ -6,4 +6,4 @@
 # Example variables from UDS package repo template. Update to relevant variables after templating
 image:
   repository: registry1.dso.mil/ironbank/radiusmethod/socketzero/receiver
-  tag: 0.6.2
+  tag: 0.7.0
