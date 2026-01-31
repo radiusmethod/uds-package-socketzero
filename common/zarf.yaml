@@ -31,7 +31,7 @@ components:
         namespace: socketzero
         url: https://github.com/radiusmethod/socketzero-helm.git
         gitPath: .
-        version: 0.7.0
+        version: 0.7.1
         valuesFiles:
           - ../values/common-values.yaml
     actions:

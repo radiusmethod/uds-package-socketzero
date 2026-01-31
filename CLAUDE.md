@@ -63,7 +63,7 @@ uds deploy bundle/uds-bundle-socketzero-<arch>-0.0.1.tar.zst --confirm \
 
 ### Key Components
 
-1. **SocketZero Application** - Deployed via Helm chart from https://github.com/radiusmethod/socketzero-helm.git (v0.7.0)
+1. **SocketZero Application** - Deployed via Helm chart from https://github.com/radiusmethod/socketzero-helm.git (v0.7.1)
 2. **Redis** - Bundled dependency using Iron Bank image (`registry1.dso.mil/ironbank/bitnami/redis:8.0.3`)
 3. **UDS Package Resource** - Configures SSO integration and network policies in `chart/templates/uds-package.yaml`
 4. **Values Files** - Environment-specific configurations in `values/` directory
@@ -77,7 +77,7 @@ uds deploy bundle/uds-bundle-socketzero-<arch>-0.0.1.tar.zst --confirm \
 ## Image Registry
 
 Uses Registry1 Iron Bank images:
-- `registry1.dso.mil/ironbank/radiusmethod/socketzero/receiver:0.7.0`
+- `registry1.dso.mil/ironbank/radiusmethod/socketzero/receiver:0.7.1`
 - `registry1.dso.mil/ironbank/bitnami/redis:8.0.3`
 
 ## Variables
