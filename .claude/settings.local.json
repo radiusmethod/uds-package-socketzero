@@ -1,7 +1,19 @@
 {
   "permissions": {
     "allow": [
-      "Bash(kubectl exec:*)"
+      "Bash(kubectl exec:*)",
+      "Bash(kubectl get:*)",
+      "Bash(curl:*)",
+      "Bash(kubectl describe:*)",
+      "Bash(kubectl logs:*)",
+      "Bash(jq:*)",
+      "Bash(kubectl run:*)",
+      "Bash(kubectl rollout:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(gh run view:*)",
+      "Bash(gh api:*)",
+      "Bash(git stash push:*)",
+      "Bash(grep:*)"
     ],
     "deny": []
   }
